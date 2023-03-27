@@ -1,0 +1,12 @@
+{
+  "devDependencies": {
+    "@types/express": "^4.17.17",
+    "@types/node": "^18.15.10",
+    "@types/ws": "^8.5.4",
+    "typescript": "^5.0.2"
+  },
+  "dependencies": {
+    "mariadb": "^3.1.1",
+    "ws": "^8.13.0"
+  }
+}
