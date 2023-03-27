@@ -14,7 +14,6 @@ import { gender, machineType, reservation, address,  machine } from './types';
 // address:number,
 // university:string,
 // machineNumber:number,
-// reservations:array<reservation>,
 // remainingTime:number,
 // isRunning:boolean,
 // isWaiting:boolean,
@@ -56,8 +55,7 @@ class MariadbRequest {
             address INT,
             university VARCHAR(255),
             machineNumber INT,
-            reservations JSON,
-            remainingTime TIMESTAMP,
+            remainingTime INT,
             isRunning BOOLEAN,
             isWaiting BOOLEAN
           )`, []);
@@ -76,7 +74,7 @@ class MariadbRequest {
     async insertMachine(machine: machine) {
         let machineValues = Object.values(machine);
         await this.writeQuery(`INSERT INTO machines 
-        (id, gender, machineType, address, machineNumber, reservations, remainingTime, isRunning, isWaiting) 
+        (id, gender, machineType, address, university, machineNumber, remainingTime, isRunning, isWaiting) 
         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`,  machineValues);
     }
     async insertReservation(reservation: reservation) {
