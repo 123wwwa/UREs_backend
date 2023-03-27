@@ -7,7 +7,6 @@ interface machine {
     address: number,
     university: string,
     machineNumber: number,
-    reservations: Array<reservation>,
     remainingTime: number,
     isRunning: boolean,
     isWaiting: boolean,
