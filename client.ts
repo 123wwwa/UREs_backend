@@ -1,8 +1,11 @@
 import * as WebSocket from 'ws';
 import { machine } from './types';
+import { WebSocketObj } from './types';
 class Client {
-    private server: WebSocket.Server;
-    constructor(server: WebSocket.Server) {
+    private server: WebSocketObj;
+    private socket: any;
+    constructor(server: WebSocketObj, socket:any) {
+        this.socket = socket;
         this.server = server;
     }
     handleMessages(){
@@ -15,3 +18,4 @@ class Client {
         // send all machines to client
     }
 }
+export default Client;
